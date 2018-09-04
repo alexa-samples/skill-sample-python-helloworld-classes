@@ -38,17 +38,17 @@ For the sample skill using the ``decorators`` approach, check
 Additional Resources
 --------------------
 
-###Community
+### Community
 
 -  [Amazon Developer Forums](https://forums.developer.amazon.com/spaces/165/index.html) : Join the conversation!
 -  [Hackster.io](https://www.hackster.io/amazon-alexa) - See what others are building with Alexa.
 
-###Tutorials & Guides
+### Tutorials & Guides
 
 -  [Voice Design Guide](https://developer.amazon.com/designing-for-voice/) -
    A great resource for learning conversational and voice user interface design.
 
-###Documentation
+### Documentation
 
 
 -  [Official Alexa Skills Kit Python SDK Docs](https://alexa-skills-kit-python-sdk.readthedocs.io/en/latest/)
