@@ -1,4 +1,4 @@
-# Build An Alexa Hello World Skill
+# Build an Alexa Hello World Skill in ASK Python SDK
 <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/quiz-game/header._TTH_.png" />
 
 [![Voice User Interface](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/1-locked._TTH_.png)](./1-voice-user-interface.md)[![Lambda Function](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/2-on._TTH_.png)](./2-lambda-function.md)[![Connect VUI to Code](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/3-locked._TTH_.png)](./3-connect-vui-to-code.md)[![Testing](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/4-locked._TTH_.png)](./4-testing.md)[![Next Steps](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/5-locked._TTH_.png)](./5-next-steps.md)
@@ -24,9 +24,13 @@ In the [first step of this guide](./1-voice-user-interface.md), we built the Voi
     ![Create lambda function](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/2-4-create-a-lambda-function._TTH_.png)
 
 5.  **Click on "Author from scratch".**  We will configure our Lambda function next.
-    1. These values will only ever be visible to you, but make sure that you name your function something meaningful. "samplePythonQuiz" is sufficient if you don't have another idea for a name.
+    1. These values will only ever be visible to you, but make sure that you name your function something meaningful. "sampleHelloWorld" is sufficient if you don't have another idea for a name.
 
-    2. From the "Runtime" dropdown select *Python 3.6*
+    2. From the "Runtime" dropdown select the python version your system supports. To check the python version, try the following command in a terminal
+    ```
+    $ python --version
+    Python 2.7.10
+    ```
 
     3. **Set up your Lambda function role.**  If you haven't done this before, we have a [detailed walkthrough for setting up your first role for Lambda](Lambda-Role.md).  If you have done this before, you only need to set an **Existing role**.
 
@@ -37,12 +41,15 @@ In the [first step of this guide](./1-voice-user-interface.md), we built the Voi
 7.  **Finish configuring your function**. Click on your function's name (you'll find it in the middle) and scroll to the bottom of the page, you'll see a Cloud9 code editor.
 
     We have provided the code for this skill on [GitHub](../lambda) folder. Follow these steps to get the code uploaded to lambda:
-    1. Install the ASK Python SDK as per the details mentioned in the [getting-started](https://alexa-skills-kit-python-sdk.readthedocs.io/en/latest/GETTING_STARTED.html) documentation.
-    2. Figure out the SDK installation folder. If you have followed the SDK [installation to a specific folder](https://alexa-skills-kit-python-sdk.readthedocs.io/en/latest/GETTING_STARTED.html#option-2-set-up-the-sdk-in-a-specific-folder), then it would be ``ask-sdk``. Else, if you have followed the SDK [Installation through Virtualenv](https://alexa-skills-kit-python-sdk.readthedocs.io/en/latest/GETTING_STARTED.html#option-1-set-up-the-sdk-in-a-virtual-environment), then it would be ``site-packages`` under ``skill/lib/Python3.6``.
-    3. Copy the contents of the [lambda](../lambda) folder, to the place where the SDK has been installed. 
-    4. Create the zip of the content of the SDK folder (not the folder itself).
-    5. Change the **code entry type** dropdown to *Upload a .ZIP file*, select the Runtime appropriate to your system Python version.
-    6. Upload the zip created previously.
+    1. Install the ASK Python SDK as per the details mentioned in the [getting-started](https://alexa-skills-kit-python-sdk.readthedocs.io/en/latest/GETTING_STARTED.html) documentation. We recommend you to use the virtual environment [approach](https://alexa-skills-kit-python-sdk.readthedocs.io/en/latest/GETTING_STARTED.html#option-1-set-up-the-sdk-in-a-virtual-environment) for cleaner installation.
+    2. Navigate to the SDK installation folder. For the recommended virtualenv approach it would be ``site-packages`` under ``skill/lib/Python2.7``.
+        > If you are working on a Windows machine, then the installation folder would be ``site-packages`` under ``skill\Lib``.
+        
+        > If you have followed the approach of installing the SDK to a [specific folder](https://alexa-skills-kit-python-sdk.readthedocs.io/en/latest/GETTING_STARTED.html#option-2-set-up-the-sdk-in-a-specific-folder), then the installation folder would be ``ask-sdk``.
+    
+    3. Copy the contents of the [lambda](../lambda) folder into the SDK installation folder. 
+    4. Create the zip of the SDK installation folder contents (**not** the folder itself). So your zip file should contain the folder contents at the root level.
+    5. Change the **code entry type** drop-down to **Upload a .ZIP file**, upload the zip created in the previous step.
     7. Change the handler name to ``hello_world.handler`` and click on **Save**.
 
 13. You should see the Amazon Resource Name (ARN) a unique identifier for this function in the top right corner of the page. **Copy the ARN value for this Lambda function** for use in the next section of the guide.
