@@ -9,9 +9,10 @@ At this point, you should have a working copy of our Hello World skill.
 
 Normally, if you were building a skill from one of our templates, you would customize it and make it your own (as opposed to a clone of our template).  After that, you would certify and publish the skill.  Given that this is the Hello World skill, you won't be doing that.  Instead, check out some of these other templates which will start to show you more of the features of the Alexa Skills Kit.
 
-* [High Low Game Skill](https://github.com/alexa-labs/skill-sample-python-highlowgame) - the High Low Game skill is a simple example and a great next step after Hello World. The skill asks user to guess a number and tells if the guessed number is higher or lower than the correct guess. 
-* [Quiz Skill](https://github.com/alexa-labs/skill-sample-python-quiz-game) - a skill where the user can ask for information on one of the states of US and play a quiz around the states. This sample skill shows off the render template directive usage.
-* [Fact w/In Skill Purchasing](https://github.com/alexa-labs/skill-sample-python-fact-in-skill-purchases) - takes the Fact skill and adds in skill purchasing to it.
-* [Pet Match Skill](https://github.com/alexa-labs/skill-sample-python-pet-match) - a skill where the user is asked for their ideal requirements and matches with a dog. Shows off the dialog management and slot resolution usage.
-* [City Guide Skill](https://github.com/alexa-labs/skill-sample-python-city-guide) - a skill that provides restaurant recommendations, attractions and current weather for a city. Shows off the external API call usage.
-* [How-To Skill](https://github.com/alexa-labs/skill-sample-python-how-to) - a skill that provides how to obtain a random item. Shows off multiple locales and localization usage.
+* [Simple Facts Skill](https://github.com/alexa/skill-sample-python-fact) - A simple facts skill that can be used as a starter template.
+* [High Low Game Skill](https://github.com/alexa/skill-sample-python-highlowgame) - the High Low Game skill is a simple example and a great next step after Hello World. The skill asks user to guess a number and tells if the guessed number is higher or lower than the correct guess. 
+* [Quiz Skill](https://github.com/alexa/skill-sample-python-quiz-game) - a skill where the user can ask for information on one of the states of US and play a quiz around the states. This sample skill shows off the render template directive usage.
+* [Fact w/In Skill Purchasing](https://github.com/alexa/skill-sample-python-fact-in-skill-purchases) - takes the Fact skill and adds in skill purchasing to it.
+* [Pet Match Skill](https://github.com/alexa/skill-sample-python-pet-match) - a skill where the user is asked for their ideal requirements and matches with a dog. Shows off the dialog management and entity resolution.
+* [City Guide Skill](https://github.com/alexa/skill-sample-python-city-guide) - a skill that provides restaurant recommendations, attractions and current weather for a city. Shows off the external API call usage.
+* [How-To Skill](https://github.com/alexa/skill-sample-python-how-to) - a skill that provides how to obtain a random item. Shows off multiple locales and localization usage.
