@@ -30,10 +30,10 @@ on this can be checked in the [documentation](https://alexa-skills-kit-python-sd
 
 This sample skill shows how to implement ``AbstractRequestHandler`` class 
 and register the handler classes explicitly in the skill builder object. 
-The code for this implementation is under [lambda](lambda) folder.
+The code for this implementation is under [lambda/py](lambda/py) folder.
 
 For the sample skill using the ``decorators`` approach, check 
-[skill-sample-python-helloworld-decorators](https://github.com/alexa-labs/skill-sample-python-helloworld-decorators).
+[skill-sample-python-helloworld-decorators](https://github.com/alexa/skill-sample-python-helloworld-decorators).
 
 Additional Resources
 --------------------
