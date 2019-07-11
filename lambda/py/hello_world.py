@@ -9,7 +9,7 @@ import logging
 from ask_sdk_core.skill_builder import SkillBuilder
 from ask_sdk_core.dispatch_components import AbstractRequestHandler
 from ask_sdk_core.dispatch_components import AbstractExceptionHandler
-from ask_sdk_core.utils import is_request_type, is_intent_name, get_intent_name
+import ask_sdk_core.utils as ask_utils
 from ask_sdk_core.handler_input import HandlerInput
 
 from ask_sdk_model.ui import SimpleCard
@@ -18,12 +18,12 @@ from ask_sdk_model import Response
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
-
 class LaunchRequestHandler(AbstractRequestHandler):
     """Handler for Skill Launch."""
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
-        return is_request_type("LaunchRequest")(handler_input)
+        
+        return ask_utils.is_request_type("LaunchRequest")(handler_input)
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
@@ -31,9 +31,9 @@ class LaunchRequestHandler(AbstractRequestHandler):
 
         return (
             handler_input.response_builder
-            .speak(speak_output)
-            .ask(speak_output)
-            .response
+                .speak(speak_output)
+                .ask(speak_output)
+                .response
         )
 
 
@@ -41,7 +41,7 @@ class HelloWorldIntentHandler(AbstractRequestHandler):
     """Handler for Hello World Intent."""
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
-        return is_intent_name("HelloWorldIntent")(handler_input)
+        return ask_utils.is_intent_name("HelloWorldIntent")(handler_input)
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
@@ -49,9 +49,9 @@ class HelloWorldIntentHandler(AbstractRequestHandler):
 
         return (
             handler_input.response_builder
-            .speak(speech_output)
-            # .ask("add a reprompt if you want to keep the session open for the user to respond")
-            .response
+                .speak(speak_output)
+                # .ask("add a reprompt if you want to keep the session open for the user to respond")
+                .response
         )
 
 
@@ -59,7 +59,7 @@ class HelpIntentHandler(AbstractRequestHandler):
     """Handler for Help Intent."""
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
-        return is_intent_name("AMAZON.HelpIntent")(handler_input)
+        return ask_utils.is_intent_name("AMAZON.HelpIntent")(handler_input)
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
@@ -67,9 +67,9 @@ class HelpIntentHandler(AbstractRequestHandler):
 
         return (
             handler_input.response_builder
-            .speak(speak_output)
-            .ask(speak_output)
-            .response
+                .speak(speak_output)
+                .ask(speak_output)
+                .response
         )
 
 
@@ -77,8 +77,8 @@ class CancelOrStopIntentHandler(AbstractRequestHandler):
     """Single handler for Cancel and Stop Intent."""
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
-        return (is_intent_name("AMAZON.CancelIntent")(handler_input) or
-                is_intent_name("AMAZON.StopIntent")(handler_input))
+        return (ask_utils.is_intent_name("AMAZON.CancelIntent")(handler_input) or
+                ask_utils.is_intent_name("AMAZON.StopIntent")(handler_input))
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
@@ -86,8 +86,8 @@ class CancelOrStopIntentHandler(AbstractRequestHandler):
 
         return (
             handler_input.response_builder
-            .speak(speak_output)
-            .response
+                .speak(speak_output)
+                .response
         )
 
 
@@ -95,7 +95,7 @@ class SessionEndedRequestHandler(AbstractRequestHandler):
     """Handler for Session End."""
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
-        return is_request_type("SessionEndedRequest")(handler_input)
+        return ask_utils.is_request_type("SessionEndedRequest")(handler_input)
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
@@ -112,18 +112,18 @@ class IntentReflectorHandler(AbstractRequestHandler):
     """
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
-        return is_request_type("IntentRequest")(handler_input)
+        return ask_utils.is_request_type("IntentRequest")(handler_input)
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
-        intent_name = get_intent_name(handler_input)
+        intent_name = ask_utils.get_intent_name(handler_input)
         speak_output = "You just triggered " + intent_name + "."
 
         return (
             handler_input.response_builder
-            .speak(speak_output)
-            # .ask("add a reprompt if you want to keep the session open for the user to respond")
-            .response
+                .speak(speak_output)
+                # .ask("add a reprompt if you want to keep the session open for the user to respond")
+                .response
         )
 
 
@@ -144,9 +144,9 @@ class CatchAllExceptionHandler(AbstractExceptionHandler):
 
         return (
             handler_input.response_builder
-            .speak(speak_output)
-            .ask(speak_output)
-            .response
+                .speak(speak_output)
+                .ask(speak_output)
+                .response
         )
 
 # The SkillBuilder object acts as the entry point for your skill, routing all request and response
