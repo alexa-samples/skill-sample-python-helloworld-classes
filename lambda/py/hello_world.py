@@ -12,7 +12,6 @@ from ask_sdk_core.dispatch_components import AbstractExceptionHandler
 import ask_sdk_core.utils as ask_utils
 from ask_sdk_core.handler_input import HandlerInput
 
-from ask_sdk_model.ui import SimpleCard
 from ask_sdk_model import Response
 
 logger = logging.getLogger(__name__)
