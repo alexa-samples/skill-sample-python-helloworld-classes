@@ -32,7 +32,7 @@ In the [first step of this guide](1-voice-user-interface.md), we built the Voice
         Python 2.7.10
         ```
 
-    3. **Set up your Lambda function role.**  If you haven't done this before, we have a [detailed walkthrough for setting up your first role for Lambda](https://github.com/alexa/alexa-cookbook/blob/master/guides/aws-security-and-setup/lambda-role.md).  If you have done this before, you only need to select the **Existing role**.
+    3. **Set up your Lambda function role.**  If you haven't done this before, we have a [detailed walkthrough for setting up your first role for Lambda](https://alexa.design/create-lambda-role).  If you have done this before, you only need to select the **Existing role**.
 
     4. Click **Create function**.
 
