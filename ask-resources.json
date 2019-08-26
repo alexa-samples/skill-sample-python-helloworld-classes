@@ -1,0 +1,25 @@
+{
+    "askcliResourcesVersion": "2019-08-23",
+    "profiles": {
+      "default": {
+        "skillId": "",
+        "skillMetadata": {
+          "src": "./skill-package",
+          "lastDeployHash": ""
+        },
+        "code": {
+          "default": {
+            "src": "./code",
+            "lastDeployHash": ""
+          }
+        },
+        "skillInfrastructure": {
+          "userConfig": {
+            "runtime": "python3.6",
+            "handler": "hello_world.handler"
+          }
+        }
+      }
+    }
+  }
+  
