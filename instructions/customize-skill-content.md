@@ -11,7 +11,7 @@ At this point, you should have a working copy of our Hello World skill. Go ahead
 
     1. Navigate to the **Code** tab, and expand the project folder on the left to `Skill Code/alexa`
 
-    2. Open **[data.py](../lambda/py/alexa/data.py)**
+    2. Open **[lambda_function.py](../lambda/py/lambda_function.py)**
 
     3. This file contains all of the strings for the `en-US` locale. Let's go ahead and change the response Alexa says when we open the skill. This is going to be line `3-4` in the file.
 
