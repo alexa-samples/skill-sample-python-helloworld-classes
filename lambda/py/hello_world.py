@@ -164,6 +164,23 @@ class CatchAllExceptionHandler(AbstractExceptionHandler):
             .response
         )
 
+class FallbackIntentHandler(AbstractRequestHandler):
+    """Handler for the Fallback Intent"""
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> bool
+        return ask_utils.is_intent_name("AMAZON.FallbackIntent")(handler_input)
+
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+        speak_output = "Hmm, I didn't quite understand that. What would you like to do?"
+
+        return (
+            handler_input.response_builder
+                .speak(speak_output)
+                .ask(speak_output)
+                .response
+        )
+
 
 class LocalizationInterceptor(AbstractRequestInterceptor):
     """
