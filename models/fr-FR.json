@@ -2,6 +2,11 @@
 	"interactionModel": {
 		"languageModel": {
 			"invocationName": "le génie des salutations",
+			"modelConfiguration": {
+                "fallbackIntentSensitivity": {
+                    "level": "LOW"
+                }
+            },
 			"intents": [
 				{
 					"name": "AMAZON.CancelIntent",
