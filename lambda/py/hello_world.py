@@ -100,6 +100,19 @@ class CancelOrStopIntentHandler(AbstractRequestHandler):
             .response
         )
 
+class FallbackIntentHandler(AbstractRequestHandler):
+    """Single handler for Fallback Intent."""
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> bool
+        return ask_utils.is_intent_name("AMAZON.FallbackIntent")(handler_input)
+
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+        logger.info("In FallbackIntentHandler")
+        speech = "Hmm, I'm not sure. You can say Hello or Help. What would you like to do?"
+        reprompt = "I didn't catch that. What can I help you with?"
+
+        return handler_input.response_builder.speak(speech).ask(reprompt).response
 
 class SessionEndedRequestHandler(AbstractRequestHandler):
     """Handler for Session End."""
@@ -187,6 +200,7 @@ sb.add_request_handler(LaunchRequestHandler())
 sb.add_request_handler(HelloWorldIntentHandler())
 sb.add_request_handler(HelpIntentHandler())
 sb.add_request_handler(CancelOrStopIntentHandler())
+sb.add_request_handler(FallbackIntentHandler())
 sb.add_request_handler(SessionEndedRequestHandler())
 # make sure IntentReflectorHandler is last so it doesn't override your custom intent handlers
 sb.add_request_handler(IntentReflectorHandler())
