@@ -13,7 +13,7 @@
         },
         "skillInfrastructure": {
           "userConfig": {
-            "runtime": "python3.6",
+            "runtime": "python3.9",
             "handler": "hello_world.handler"
           }
         }
