@@ -45,7 +45,7 @@ Additional Resources
 
 ### Tutorials & Guides
 
--  [Voice Design Guide](https://developer.amazon.com/designing-for-voice/) -
+-  [Voice Design Guide](https://developer.amazon.com/fr/designing-for-voice/) -
    A great resource for learning conversational and voice user interface design.
 
 ### Documentation
